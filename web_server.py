@@ -28,7 +28,9 @@ async def get_request(request):
         logger.info(res)
     return response.json(json.loads(res))
 
+app.add_task(ws_run())
+
 
 if __name__ == '__main__':
-    app.add_task(ws_run())
+    
     app.run(debug=False, host="127.0.0.1", port=5000)
